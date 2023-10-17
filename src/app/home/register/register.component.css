@@ -1,0 +1,40 @@
+
+
+
+
+  label{
+
+    color:white;
+
+}
+
+
+
+.form-control:focus{
+
+color:black
+
+}
+
+.form-control:hover{
+
+color:rgb(5, 16, 17);
+
+}
+
+form-control.select{
+
+padding: 10px;
+
+width: 550px;
+
+height: 40px;
+
+color:rgb(5, 16, 17);
+
+color:black
+
+}
+  
+ 
+  

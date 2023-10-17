@@ -1,0 +1,88 @@
+<h1>Wireless Products</h1>
+
+<h3>Prepaid Products Queue</h3>
+
+<table>
+
+    <thead>
+
+        <th>ID</th>
+
+        <th>Plan value</th>
+
+        <th>Plan Validity</th>
+
+        <th>Total Data</th>
+
+        <th>Data Per Day</th>
+
+        <th>voice</th>
+
+        <th>sms</th>
+
+        <th>Supscriptions</th>
+
+        <th>Admin Name</th>
+
+        <th>Status</th>
+
+        <th>Choices</th>
+
+        <!-- <th>Delete</th> Corrected 'status' to 'Status' -->
+
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let p of Products| productStatusFilter:statuses ; let i = index ">
+
+            <td  >{{p.id}}</td>
+
+            <td >{{p.planvaluel}}</td>
+
+            <td >{{p.planvalidity}}</td>
+
+            <td >{{p.totaldata}}</td>
+
+            <td >{{p.dataperday}}</td>
+
+            <td >{{p.voice}}</td>
+
+            <td >{{p.sms}}</td>
+
+            <td >{{p.subscriptions}}</td>
+
+            <td >{{p.adminname}}</td>
+
+            <td >{{p.status}}</td>
+
+            <div class="button-group">
+
+                <td>
+
+                    <button class="approve"(click)="onApproveWPRE(p)"><i class="fa fa-check"></i> Approve</button>
+
+                   
+
+                   
+
+                <td>
+
+                    <button class="delete" (click)="ondeleteWPRE(p)"><i class="fa fa-trash"></i> Delete</button>
+
+              </div>
+
+             
+
+         
+
+           
+
+        </tr>
+
+    </tbody>
+
+   
+
+</table>
+
