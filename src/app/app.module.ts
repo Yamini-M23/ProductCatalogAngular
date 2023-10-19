@@ -21,6 +21,8 @@ import { ProductCategoryPipe } from './Pipe/product-category.pipe';
 import { SAadminsComponent } from './home/login/super-admin/saadmins/saadmins.component';
 import { SaproductsComponent } from './home/login/super-admin/saproducts/saproducts.component';
 import { ProductStatusFilterPipe } from './Pipe/product-status-filter.pipe';
+import { LogoutComponent } from './home/login/logout/logout.component';
+import { SearchFilterPipe } from './Pipe/search-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { ProductStatusFilterPipe } from './Pipe/product-status-filter.pipe';
     ProductCategoryPipe,
     SAadminsComponent,
     SaproductsComponent,
-    ProductStatusFilterPipe
+    ProductStatusFilterPipe,
+    LogoutComponent,
+    SearchFilterPipe
   ],
   imports: [
     BrowserModule,

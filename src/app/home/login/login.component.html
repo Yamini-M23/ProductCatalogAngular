@@ -78,8 +78,8 @@
       
                     </div>
       <br>
-                    <button type="button" class="btn btn-warning btn-block btn-round"  [disabled]="proform.form.invalid" (click)="datasubmitted(name,email,password)">Sign In</button>
-                     <div class="text-success" *ngIf="valid" routerLink="/admin"><b><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
+                    <button type="button" class="btn btn-warning btn-block btn-round"  [disabled]="proform.form.invalid" (click)="datasubmitted(email,password)">Sign In</button>
+                     <div class="text-success" *ngIf="v"><b><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16">
                       <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2z"/>
                     </svg> Logging you in...<a routerLink="/admin" target="_parent" rel="sponsored"> Tap here</a> to Enter</b></div> 
                      <div class="text-danger" *ngIf="!valid">Invalid Credentials</div>

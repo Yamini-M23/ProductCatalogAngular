@@ -9,21 +9,15 @@ import { SuperAdminServiceService } from 'src/app/service/super-admin-service.se
 })
 export class SaproductsComponent {
 
-  products:any;
+  product:any;
+
+  Products:any;
 
   productcategory:any;
 
-  WPproducts:any;
+  productcategory1 : any="WireLess";
 
-  WPreproducts:any;
-
-  WLINEproducts:any;
-
-  WlinePro:any;
-
-  business:any;
-
- 
+  productcategory2:any="WiredLine";
 
   list:any;
 
@@ -33,12 +27,15 @@ export class SaproductsComponent {
 
   constructor(private service:SuperAdminServiceService, private eservice:AddPlanServiceService)
   {
-    this.eservice.getPlan(this.productcategory).subscribe((pro)=>{this.products=pro});
+    // this.eservice.getPlan(this.productcategory).subscribe((pro)=>{this.products=pro});
+
+    this.eservice.getPlan(this.productcategory1).subscribe((pro)=>{this.product=pro});
+
+    this.eservice.getPlan(this.productcategory2).subscribe((pro)=>{this.Products=pro});
   }
 
-  value:any[]=["Monthly","half yearly","Quartly","Annual"];
 
-  onApprove(pro: productsResponse)
+  onApproveWireline(pro: any)
   {
 
     this.list=pro;
@@ -47,42 +44,33 @@ export class SaproductsComponent {
 
     this.list.status="Approved";
 
-    this.service.editProducts(this.list).subscribe();
+    this.service.editWirelineProducts(this.list).subscribe();
 
   //  this.list=new wlineResponse(this.id,this.pr,this.pv,this.tot,this.voi,this.sms,this.add,this.fam,this.sup,this.an,this.st)
 
   }
 
-  ondelete(pro:productsResponse)
+  onDeleteWireline(pro:any)
   {
-    this.service.deletePoducts(pro).subscribe();
+    this.service.deleteWirelineProducts(pro).subscribe();
   }
 
  
 
  
 
-  // onApproveWPRE(pro:any)
+  onApproveWireless(pro:any)
+  {
+     this.list=pro;
+     pro.status="Approved"
+     this.service.editWirelessProducts(pro).subscribe();
+  }
 
-  // {
-
-  //    this.list=pro;
-
-  //    pro.status="Approved"
-
-  //    this.service.editProducts(pro).subscribe();
-
-  // }
-
-  // ondeleteWPRE(pro:any)
-
-  // {
-
-  //   this.list=pro;
-
-  //   this.service.deleteProducts(pro).subscribe();
-
-  // }
+  onDeleteWireless(pro:any)
+  {
+    this.list=pro;
+    this.service.deleteWirelessProducts(pro).subscribe();
+  }
 
  
 

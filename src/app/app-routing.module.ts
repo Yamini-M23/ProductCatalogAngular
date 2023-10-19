@@ -11,6 +11,7 @@ import { WirelessProductsComponent } from './home/login/admin/wireless-products/
 import { SuperAdminComponent } from './home/login/super-admin/super-admin.component';
 import { SAadminsComponent } from './home/login/super-admin/saadmins/saadmins.component';
 import { SaproductsComponent } from './home/login/super-admin/saproducts/saproducts.component';
+import { LogoutComponent } from './home/login/logout/logout.component';
 
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
     component:AdminComponent
   },
   {
+    path:'logout',
+    component:LogoutComponent
+  },
+  {
     path:'viewplans',
     component:ViewPlansComponent
   },
@@ -44,6 +49,10 @@ const routes: Routes = [
   {
     path:'wired',
     component:WiredProductsComponent
+  },
+  {
+    path:'wireless',
+    component:WirelessProductsComponent
   },
   {
     path:'saadmins',

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { SuperAdminServiceService } from 'src/app/service/super-admin-service.service';
 
 @Component({
   selector: 'app-login',
@@ -9,47 +10,118 @@ import { Router } from '@angular/router';
 export class LoginComponent {
   
   title = 'Product Catalog';
-  valid:boolean=false;
+  valid:any[]=[];
   name:any;
   password:any;
   email:any;
+  approve:boolean=false;
+  v:boolean=false;
+  username:any;
 
-  constructor(private router:Router)
+  constructor(private router:Router,private service:SuperAdminServiceService)
   {
+   
   }
   
-  adminValidation(name:any,email:any,pass:any):boolean
+  // adminValidation(email:any,pass:any):boolean
+  // {
+  //   if(email=="superadmin@provue.in" && pass=="SA@Provue")
+  //   {
+  //     return true;
+  //   }
+
+  //   else if(email=="admin2@provue.in" && pass=="Admin@Provue")
+  //   {
+  //     return true;
+  //   }
+
+  //   else if(email=="admin3@provue.in" && pass=="Admin@Provue")
+  //   {
+  //     return true;
+  //   }
+  //  return false;
+  // }
+
+  datasubmitted(email:any,password:any)
   {
-    if(name=="ProVueAdmin1" && email=="admin1@provue.in" && pass=="Admin@Provue")
-    {
-      return true;
-    }
-
-    else if(name=="ProVueAdmin2" && email=="admin2@provue.in" && pass=="Admin@Provue")
-    {
-      return true;
-    }
-
-    else if(name=="ProVueAdmin3" && email=="admin3@provue.in" && pass=="Admin@Provue")
-    {
-      return true;
-    }
-   return false;
-  }
-
-  datasubmitted(name:any,email:any,pass:any)
-  {
-    if(name=="SuperAdmin" && email=="superadmin@provue.com" &&pass=="SAProvue")
+    console.log(email,password);
+    if(email=="superadmin@provue.com" &&password=="SAProvue")
     {
       console.log("login sucess");
       this.router.navigate(['/superadmin']);
     }
 
-    else
-    {
-    this.valid= this.adminValidation(name,email,pass);
+    // else
+    // {
+    // this.valid[]= this.adminValidation(email,pass);
+    // }
+
+    else{
+
+      this.service.validateAdmins(email,password).subscribe(
+
+        (response:any)=>{
+
+          if(response.status=="success"){
+            this.v=true;
+
+            localStorage.setItem('currentUser', JSON.stringify(response));//object
+
+            localStorage.setItem('password',JSON.stringify(response.credentials.password));//object attribute
+
+            localStorage.setItem('username',JSON.stringify(response.credentials.adminName));
+
+            localStorage.setItem('email',JSON.stringify(response.credentials.email));
+
+            localStorage.setItem('userid',JSON.stringify(response.credentials.adminId));
+
+       
+
+            const storedUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+
+            const password=JSON.parse(localStorage.getItem('password')+'');
+
+            const email=JSON.parse(localStorage.getItem('email')+'');
+
+            const username=JSON.parse(localStorage.getItem('username')+'');
+
+            const userid=JSON.parse(localStorage.getItem('userid')+'');
+
+            console.log("local storage",storedUser);
+
+            console.log("UserName",username);
+
+            console.log("email",email);
+
+            console.log("pass",password);
+     
+            console.log("id",userid);
+
+         
+           this.router.navigate(['/admin']);
+
+          }
+
+        },
+
+        (error:any)=>
+        {
+
+      console.error('Login Failed:',error);
+
+        }
+
+        );
+
+
     }
 
   }
 
+ 
+
 }
+
+  
+
+

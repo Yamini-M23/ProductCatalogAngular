@@ -25,7 +25,7 @@ body {
  .card{
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-image: url("C:\Users\yamini.m\Desktop\Capstone Project\ProC\src\assets\images\recharge2.png"); */
+  background-image: url("C:\Users\yamini.m\Desktop\Capstone Project\ProC\src\assets\images\recharge2.png");
  }
 
 a {
@@ -66,7 +66,7 @@ text-align: center;
   font-family: 'Heebo';
   --bg-filter-opacity: 0.5;
   background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
-  height: 50em;
+  height: 40em;
   width: 15em;
   font-size: 1.5em;
   color: white;
@@ -77,6 +77,7 @@ text-align: center;
   align-items: flex-end;
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   box-shadow: 0 0 5em -1em black;
   transition: all, var(--transition-time);
   position: relative;
@@ -194,6 +195,35 @@ text-align: center;
   font-size: 3em;
   margin-bottom: 1.2rem;
   margin-left: 1rem;
+}
+
+.form-check-input
+{
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.form-check-label
+{
+    display: inline-block;
+    /* margin-right: 20px; */
+    margin-left: 5px;
+}
+
+.col-md-12 
+{
+    color: white;
+    font-size: inherit;
+   text-align: left;
+   margin-bottom: 10px;
+}
+
+.form-check{
+    display: inline-block;
+    align-items: center;
+    margin-right: 20px;
+
 }
 
  

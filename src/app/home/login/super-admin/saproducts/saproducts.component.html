@@ -1,6 +1,6 @@
-<h1>Wireless Products</h1>
+<h1>WIRELESS PRODUCTS</h1>
 
-<h3>Prepaid Products Queue</h3>
+<!-- <h3>Prepaid Products Queue</h3> -->
 
 <table>
 
@@ -8,25 +8,35 @@
 
         <th>ID</th>
 
-        <th>Plan value</th>
+        <th>PLAN</th>
 
-        <th>Plan Validity</th>
+        <th>CATEGORY</th>
 
-        <th>Total Data</th>
+        <th>PRODUCT CATEGORY</th>
 
-        <th>Data Per Day</th>
+        <th>PRODUCT SUB-CATEGORY</th>
 
-        <th>voice</th>
+        <th>VALIDITY</th>
 
-        <th>sms</th>
+        <!-- <th>BILLCYCLE</th> -->
 
-        <th>Supscriptions</th>
+        <th>DATA</th>
 
-        <th>Admin Name</th>
+        <th>DATA AT HIGH SPEED</th>
 
-        <th>Status</th>
+        <th>VOICE</th>
 
-        <th>Choices</th>
+        <th>SMS</th>
+
+        <th>SUBSCRIPTIONS</th>
+
+        <th>ADDON</th>
+
+        <th>ADMIN</th>
+
+        <th>STATUS</th>
+
+        <th>MORE</th>
 
         <!-- <th>Delete</th> Corrected 'status' to 'Status' -->
 
@@ -34,15 +44,23 @@
 
     <tbody>
 
-        <tr *ngFor="let p of Products| productStatusFilter:statuses ; let i = index ">
+        <tr *ngFor="let p of product| productStatusFilter:statuses ">
 
-            <td  >{{p.id}}</td>
+            <td >{{p.id}}</td>
 
-            <td >{{p.planvaluel}}</td>
+            <td >{{p.plan}}</td>
 
-            <td >{{p.planvalidity}}</td>
+            <td >{{p.category}}</td>
 
-            <td >{{p.totaldata}}</td>
+            <td >{{p.productcategory}}</td>
+
+            <td >{{p.productsubcategory}}</td>
+
+            <td >{{p.validity}}</td>
+
+            <!-- <td >{{p.billcycle}}</td> -->
+
+            <td >{{p.data}}</td>
 
             <td >{{p.dataperday}}</td>
 
@@ -52,7 +70,9 @@
 
             <td >{{p.subscriptions}}</td>
 
-            <td >{{p.adminname}}</td>
+            <td >{{p.addon}}</td>
+
+            <td >{{p.admin}}</td>
 
             <td >{{p.status}}</td>
 
@@ -60,23 +80,113 @@
 
                 <td>
 
-                    <button class="approve"(click)="onApproveWPRE(p)"><i class="fa fa-check"></i> Approve</button>
-
-                   
-
-                   
+                    <button class="approve"(click)="onApproveWireless(p)"><i class="fa fa-check"></i> Approve</button>
 
                 <td>
 
-                    <button class="delete" (click)="ondeleteWPRE(p)"><i class="fa fa-trash"></i> Delete</button>
+                    <button class="delete" (click)="onDeleteWireless(p)"><i class="fa fa-trash"></i> Delete</button>
 
-              </div>
+              </div>  
 
-             
+        </tr>
 
-         
+    </tbody>
 
-           
+   
+
+</table>
+
+
+
+<h1>WIRELINE PRODUCTS</h1>
+
+<!-- <h3>Prepaid Products Queue</h3> -->
+
+<table>
+
+    <thead>
+
+        <th>ID</th>
+
+        <th>PLAN</th>
+
+        <th>CATEGORY</th>
+
+        <th>PRODUCT CATEGORY</th>
+
+        <th>PRODUCT SUB-CATEGORY</th>
+
+        <th>VALIDITY</th>
+
+        <th>BILLCYCLE</th>
+
+        <th>DATA</th>
+
+        <th>DATA AT HIGH SPEED</th>
+
+        <th>VOICE</th>
+
+        <!-- <th>SMS</th> -->
+
+        <th>SUBSCRIPTIONS</th>
+
+        <th>ADDON</th>
+
+        <th>ADMIN</th>
+
+        <th>STATUS</th>
+
+        <th>MORE</th>
+
+        <!-- <th>Delete</th> Corrected 'status' to 'Status' -->
+
+    </thead>
+
+    <tbody>
+
+        <tr *ngFor="let p of Products| productStatusFilter:statuses ; let i = index ">
+
+            <td >{{p.id}}</td>
+
+            <td >{{p.plan}}</td>
+
+            <td >{{p.category}}</td>
+
+            <td >{{p.productcategory}}</td>
+
+            <td >{{p.productsubcategory}}</td>
+
+            <td >{{p.validity}}</td>
+
+            <td >{{p.billcycle}}</td>
+
+            <td >{{p.data}}</td>
+
+            <td >{{p.dataperday}}</td>
+
+            <td >{{p.voice}}</td>
+
+            <!-- <td >{{p.sms}}</td> -->
+
+            <td >{{p.subscriptions}}</td>
+
+            <td >{{p.addon}}</td>
+
+            <td >{{p.admin}}</td>
+
+            <td >{{p.status}}</td>
+
+            <div class="button-group">
+
+                <td>
+
+                    <button class="approve"(click)="onApproveWireline(p)"><i class="fa fa-check"></i> Approve</button>
+
+                <td>
+
+                    <button class="delete" (click)="onDeleteWireline(p)"><i class="fa fa-trash"></i> Delete</button>
+
+              </div>  
 
         </tr>
 

@@ -25,7 +25,7 @@ body {
  .card{
   background-size: cover;
   background-repeat: no-repeat;
-  /* background-image: url("C:\Users\yamini.m\Desktop\Capstone Project\ProC\src\assets\images\recharge2.png"); */
+  background-image: url("C:\Users\yamini.m\Desktop\Capstone Project\ProC\src\assets\images\recharge2.png");
  }
 
 a {
@@ -54,10 +54,10 @@ text-align: center;
   justify-content: center;
   align-items: center;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem;
-  padding: 12rem;
+  grid-gap: 14rem;
+  padding: 4rem;
   margin: 0 auto;
-  width: max-content;
+  width: max-content4
 }
 
 
@@ -66,7 +66,7 @@ text-align: center;
   font-family: 'Heebo';
   --bg-filter-opacity: 0.5;
   background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
-  height: 50em;
+  height: 55em;
   width: 15em;
   font-size: 1.5em;
   color: white;
@@ -196,6 +196,35 @@ text-align: center;
   margin-left: 1rem;
 }
 
+.form-check-input
+{
+    width: 18px;
+    height: 18px;
+    margin-right: 10px;
+}
+
+.form-check-label
+{
+    display: inline-block;
+    /* margin-right: 20px; */
+    margin-left: 5px;
+}
+
+.col-md-12 
+{
+    color: white;
+    font-size: inherit;
+   text-align: left;
+   margin-bottom: 10px;
+}
+
+.form-check{
+    display: inline-block;
+    align-items: center;
+    margin-right: 20px;
+
+}
+
  
 
 .info {
@@ -283,6 +312,18 @@ text-align: center;
   .dropdown-toggle:not(:focus) {
     outline: 0;
   }
+
+  .cards-wrapper{
+    background-image: url('C:\Users\yamini.m\Desktop\Capstone Project\ProC\src\assets\images\contact-bg.jpg'); /* Specify the path to your image file */
+    background-size: cover; /* Adjust this property to control the image size */
+    background-position: center; /* Adjust this property to control the image position */
+    background-repeat: no-repeat; /* Prevent the background image from repeating */
+}
+.counter .pageElement{
+  margin-left: 10px;
+}
+
+
 
   /* .custom-dropdown {
     position: relative;
